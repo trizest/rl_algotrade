@@ -20,16 +20,22 @@ def readCSV(exchange,pair,timeframe):
     df = df[['Unix','Open','Close','Low', 'High','Volume']]
     return df
 
-def pickle(exchange,pair,timeframe,df):
-    #IT WENT IN THE JAR HERE!!
-    df.to_pickle(f'data/processed/{exchange}/{pair}_{timeframe}.pkl')
-
 def addTechInd(df,indicatorList) :
     do = 'nothing'
     return do
 
-df = readCSV('Binance','btc_usdt','15m')
-pickle('Binance','btc_usdt','15m',df)
 
-df.info()
-print(df)
+def pickle(exchange,pair,timeframe,df):
+    #IT WENT IN THE JAR HERE!!
+    df.to_pickle(f'data/processed/{exchange}/{pair}_{timeframe}.pkl')
+    print(f'data/processed/{exchange}/{pair}_{timeframe}.pkl')
+
+
+
+
+if __name__ == '__main__':
+    df = readCSV('Binance','btc_usdt','15m')
+    pickle('Binance','btc_usdt','15m',df)
+
+    df.info()
+    print(df.head(1))

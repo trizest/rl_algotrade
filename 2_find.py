@@ -72,8 +72,8 @@ def scrape_candles_to_csv(filename, exchange_id, max_retries, symbol, timeframe,
     write_to_csv(filename, exchange, ohlcv)
     print('Saved', len(ohlcv), 'candles from', exchange.iso8601(ohlcv[0][0]), 'to', exchange.iso8601(ohlcv[-1][0]), 'to', filename)
 
-
-scrape_candles_to_csv('btc_usdt_15m.csv', 'binance', 3, 'BTC/USDT', '15m', '2018-01-0100:00:00Z', 1000)
-scrape_candles_to_csv('eth_usdt_15m.csv', 'binance', 3, 'ETH/USDT', '15m', '2018-01-0100:00:00Z', 1000)
-# scrape_candles_to_csv('./data/raw/binance/ltc_btc_1m.csv', 'binance', 3, 'LTC/BTC', '1m', '2018-01-01T00:00:00Z', 1000)
-# scrape_candles_to_csv('./data/raw/binance/xlm_btc_1m.csv', 'binance', 3, 'XLM/BTC', '1m', '2018-01-01T00:00:00Z', 1000)
+if __name__ == '__main__':
+    scrape_candles_to_csv('btc_usdt_15m.csv', 'binance', 3, 'BTC/USDT', '15m', '2018-01-0100:00:00Z', 1000)
+    scrape_candles_to_csv('eth_usdt_15m.csv', 'binance', 3, 'ETH/USDT', '15m', '2018-01-0100:00:00Z', 1000)
+    # scrape_candles_to_csv('./data/raw/binance/ltc_btc_1m.csv', 'binance', 3, 'LTC/BTC', '1m', '2018-01-01T00:00:00Z', 1000)
+    # scrape_candles_to_csv('./data/raw/binance/xlm_btc_1m.csv', 'binance', 3, 'XLM/BTC', '1m', '2018-01-01T00:00:00Z', 1000)
