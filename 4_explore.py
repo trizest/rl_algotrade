@@ -1,0 +1,10 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_pickle('data/processed/Binance/btc_usdt_15m.pkl')
+df.info()
+
+#%%
+print(df['volume'].plot())
+#%%
+df.plot(subplots=True, figsize=(10,12))
