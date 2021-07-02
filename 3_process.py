@@ -2,6 +2,7 @@
 import pandas as pd
 from finta import TA
 
+test = 1
 
 exchange = 'Binance'
 pair = 'btc_usdt'
